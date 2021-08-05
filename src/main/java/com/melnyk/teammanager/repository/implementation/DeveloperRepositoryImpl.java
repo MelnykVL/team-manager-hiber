@@ -1,7 +1,6 @@
 package com.melnyk.teammanager.repository.implementation;
 
 import com.melnyk.teammanager.model.Developer;
-import com.melnyk.teammanager.model.Skill;
 import com.melnyk.teammanager.repository.DeveloperRepository;
 import org.hibernate.Session;
 import org.hibernate.Transaction;

@@ -5,7 +5,6 @@ import com.melnyk.teammanager.repository.SkillRepository;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import javax.persistence.criteria.CriteriaBuilder;
 import java.util.HashSet;
 import java.util.Set;
 
