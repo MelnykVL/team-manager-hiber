@@ -3,11 +3,10 @@ CREATE TABLE skills (
     name VARCHAR(255) NOT NULL UNIQUE
 );
 
-CREATE TYPE status AS ENUM ('ACTIVE', 'DELETED');
 CREATE TABLE teams (
     team_id SERIAL PRIMARY KEY,
     name VARCHAR(255) NOT NULL UNIQUE,
-    team_status status NOT NULL DEFAULT 'ACTIVE'
+    team_status VARCHAR(255) NOT NULL DEFAULT 'ACTIVE'
 );
 
 CREATE TABLE developers (
@@ -15,7 +14,7 @@ CREATE TABLE developers (
     first_name VARCHAR(255) NOT NULL,
     last_name VARCHAR(255) NOT NULL,
     team_id INT,
-    FOREIGN KEY(team_id) REFERENCES teams(team_id)
+    CONSTRAINT fk_team FOREIGN KEY(team_id) REFERENCES teams(team_id)
 );
 
 CREATE TABLE developers_skills (
