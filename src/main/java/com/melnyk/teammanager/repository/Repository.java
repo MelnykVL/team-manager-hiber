@@ -1,12 +1,12 @@
 package com.melnyk.teammanager.repository;
 
-import java.util.List;
+import java.util.Set;
 
 public interface Repository<T, ID> {
     T getById(ID id);
     T add(T t);
     T update(T t);
-    boolean removeById(ID id);
+    T removeById(ID id);
 
-    List<T> getAll();
+    Set<T> getAll();
 }

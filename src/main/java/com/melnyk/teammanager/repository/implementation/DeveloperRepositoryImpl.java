@@ -3,14 +3,9 @@ package com.melnyk.teammanager.repository.implementation;
 import com.melnyk.teammanager.model.Developer;
 import com.melnyk.teammanager.repository.DeveloperRepository;
 
-import java.util.List;
+import java.util.Set;
 
 public class DeveloperRepositoryImpl implements DeveloperRepository {
-    @Override
-    public void linkSkillToDev(Developer dev) {
-
-    }
-
     @Override
     public Developer getById(Integer integer) {
         return null;
@@ -27,12 +22,12 @@ public class DeveloperRepositoryImpl implements DeveloperRepository {
     }
 
     @Override
-    public boolean removeById(Integer integer) {
-        return false;
+    public Developer removeById(Integer integer) {
+        return null;
     }
 
     @Override
-    public List<Developer> getAll() {
+    public Set<Developer> getAll() {
         return null;
     }
 }

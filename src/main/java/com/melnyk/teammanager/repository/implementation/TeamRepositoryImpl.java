@@ -3,7 +3,7 @@ package com.melnyk.teammanager.repository.implementation;
 import com.melnyk.teammanager.model.Team;
 import com.melnyk.teammanager.repository.TeamRepository;
 
-import java.util.List;
+import java.util.Set;
 
 public class TeamRepositoryImpl implements TeamRepository {
     @Override
@@ -22,12 +22,12 @@ public class TeamRepositoryImpl implements TeamRepository {
     }
 
     @Override
-    public boolean removeById(Integer integer) {
-        return false;
+    public Team removeById(Integer integer) {
+        return null;
     }
 
     @Override
-    public List<Team> getAll() {
+    public Set<Team> getAll() {
         return null;
     }
 }
