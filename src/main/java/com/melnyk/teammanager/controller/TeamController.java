@@ -1,5 +1,6 @@
 package com.melnyk.teammanager.controller;
 
+import com.melnyk.teammanager.model.Developer;
 import com.melnyk.teammanager.model.Team;
 import com.melnyk.teammanager.model.TeamStatus;
 import com.melnyk.teammanager.repository.implementation.DeveloperRepositoryImpl;
@@ -22,7 +23,7 @@ public class TeamController {
     public void execute() {
 
         Scanner scan = new Scanner(System.in);
-        String command = "";
+        String command;
 
         teamView.showListOfCommands();
 
@@ -88,7 +89,7 @@ public class TeamController {
     private TeamStatus inputStatus() {
 
         Scanner scan = new Scanner(System.in);
-        String str = "";
+        String str;
         TeamStatus status;
 
         System.out.print("Введите новый статус (1 - active, 2 - deleted): ");
@@ -111,7 +112,7 @@ public class TeamController {
         Scanner scan = new Scanner(System.in);
 
         Team team;
-        String command = "";
+        String command;
         int id;
 
         System.out.print("Введите id: ");
@@ -158,7 +159,7 @@ public class TeamController {
     private void changeName(Team team) {
 
         Scanner scan = new Scanner(System.in);
-        String name = "";
+        String name;
 
         System.out.print("Введите новое название для команды: ");
         name = scan.nextLine();
@@ -180,9 +181,12 @@ public class TeamController {
         System.out.print("Введите id: ");
         int id = scan.nextInt();
 
-        team.addDeveloper(developerService.get(id));
+        Developer dev = developerService.get(id);
 
-        teamService.update(team);
+        dev.setTeam(team);
+        team.addDeveloper(dev);
+
+        developerService.update(dev);
 
     }
 

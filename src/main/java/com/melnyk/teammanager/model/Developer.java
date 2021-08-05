@@ -19,7 +19,7 @@ public class Developer {
     @Column(name = "last_name", nullable = false)
     private String lastName;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne
     @JoinColumn(name = "team_id")
     private Team team;
 
@@ -115,12 +115,10 @@ public class Developer {
 
     @Override
     public String toString() {
-        return "Developer{" +
-                "id=" + id +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", team=" + team +
-                ", skills=" + skills +
-                '}';
+        return "\nРазработчик ID-" + id + ':' +
+                "\n\tИмя: " + firstName + ';' +
+                "\n\tФамилия: " + lastName + ';' +
+                ((team != null) ? "\n\tКоманда: " + team.getName() : "") +
+                ((skills.size() != 0) ? "\n\tНавыки: " + skills : "");
     }
 }

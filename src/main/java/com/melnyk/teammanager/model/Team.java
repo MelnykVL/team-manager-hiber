@@ -88,11 +88,9 @@ public class Team {
 
     @Override
     public String toString() {
-        return "Team{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", teamStatus=" + teamStatus +
-                ", developers=" + developers +
-                '}';
+        return "\nКоманда ID-" + id +
+                ": Название = '" + name + '\'' +
+                "; Статус = " + teamStatus +
+                "; Члены команды:" + developers;
     }
 }
