@@ -1,6 +1,18 @@
 package com.melnyk.teammanager;
 
 
+import com.melnyk.teammanager.controller.DeveloperController;
+import com.melnyk.teammanager.controller.SkillController;
+import com.melnyk.teammanager.controller.TeamController;
+import com.melnyk.teammanager.model.Team;
+import com.melnyk.teammanager.repository.implementation.HibernateUtil;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+import java.util.HashSet;
+import java.util.Scanner;
+import java.util.Set;
+
 public class App {
     public static void main(String[] args) {
         TeamController tc = new TeamController();

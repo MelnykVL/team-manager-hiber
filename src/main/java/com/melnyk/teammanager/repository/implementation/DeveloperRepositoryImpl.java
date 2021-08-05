@@ -24,6 +24,8 @@ public class DeveloperRepositoryImpl implements DeveloperRepository {
         Session session = HibernateUtil.getSession();
         Transaction tx = session.beginTransaction();
         session.save(developer);
+        tx.commit();
+        session.close();
         return developer;
     }
 
@@ -32,6 +34,8 @@ public class DeveloperRepositoryImpl implements DeveloperRepository {
         Session session = HibernateUtil.getSession();
         Transaction tx = session.beginTransaction();
         session.update(developer);
+        tx.commit();
+        session.close();
         return developer;
     }
 

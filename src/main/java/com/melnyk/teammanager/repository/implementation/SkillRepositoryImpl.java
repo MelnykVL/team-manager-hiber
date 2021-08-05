@@ -24,6 +24,8 @@ public class SkillRepositoryImpl implements SkillRepository {
         Session session = HibernateUtil.getSession();
         Transaction tx = session.beginTransaction();
         session.save(skill);
+        tx.commit();
+        session.close();
         return skill;
     }
 
@@ -32,6 +34,8 @@ public class SkillRepositoryImpl implements SkillRepository {
         Session session = HibernateUtil.getSession();
         Transaction tx = session.beginTransaction();
         session.update(skill);
+        tx.commit();
+        session.close();
         return skill;
     }
 

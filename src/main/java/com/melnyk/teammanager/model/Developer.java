@@ -19,11 +19,11 @@ public class Developer {
     @Column(name = "last_name", nullable = false)
     private String lastName;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "team_id")
     private Team team;
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(
             name = "developers_skills",
             joinColumns = @JoinColumn(name = "developer_id"),
@@ -41,14 +41,14 @@ public class Developer {
     public Developer(String firstName, String lastName, Team team) {
         this.firstName = firstName;
         this.lastName = lastName;
-//        this.team = team;
+        this.team = team;
     }
 
     public Developer(Integer id, String firstName, String lastName, Team team) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
-//        this.team = team;
+        this.team = team;
     }
 
     public Integer getId() {

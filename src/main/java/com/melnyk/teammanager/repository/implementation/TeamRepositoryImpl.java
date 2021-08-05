@@ -24,6 +24,8 @@ public class TeamRepositoryImpl implements TeamRepository {
         Session session = HibernateUtil.getSession();
         Transaction tx = session.beginTransaction();
         session.save(team);
+        tx.commit();
+        session.close();
         return team;
     }
 
@@ -32,6 +34,8 @@ public class TeamRepositoryImpl implements TeamRepository {
         Session session = HibernateUtil.getSession();
         Transaction tx = session.beginTransaction();
         session.update(team);
+        tx.commit();
+        session.close();
         return team;
     }
 

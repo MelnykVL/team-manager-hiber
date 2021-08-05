@@ -19,7 +19,7 @@ public class Team {
     @Column(name = "team_status", nullable = false)
     private TeamStatus teamStatus = TeamStatus.ACTIVE;
 
-    @OneToMany(mappedBy = "team")
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "team")
     private Set<Developer> developers = new HashSet<>();
 
     public Team() {}
