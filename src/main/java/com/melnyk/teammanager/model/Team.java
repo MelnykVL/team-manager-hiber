@@ -1,5 +1,8 @@
 package com.melnyk.teammanager.model;
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
@@ -20,6 +23,7 @@ public class Team {
     private TeamStatus teamStatus = TeamStatus.ACTIVE;
 
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "team")
+    @Fetch(value = FetchMode.SUBSELECT)
     private Set<Developer> developers = new HashSet<>();
 
     public Team() {}

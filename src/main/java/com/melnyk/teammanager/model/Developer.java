@@ -1,5 +1,8 @@
 package com.melnyk.teammanager.model;
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Objects;
@@ -29,6 +32,7 @@ public class Developer {
             joinColumns = @JoinColumn(name = "developer_id"),
             inverseJoinColumns = @JoinColumn(name = "skill_id")
     )
+    @Fetch(value = FetchMode.SUBSELECT)
     private Set<Skill> skills = new HashSet<>();
 
     public Developer() {}
