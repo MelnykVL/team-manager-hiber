@@ -2,6 +2,8 @@ package com.melnyk.teammanager.service.implementation;
 
 import com.melnyk.teammanager.model.Skill;
 import com.melnyk.teammanager.repository.SkillRepository;
+import com.melnyk.teammanager.repository.implementation.SkillRepositoryImpl;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -14,6 +16,8 @@ import java.util.Set;
 
 import static org.junit.Assert.*;
 import static org.mockito.BDDMockito.given;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 
 @RunWith(MockitoJUnitRunner.class)
 public class SkillServiceImplTest {
