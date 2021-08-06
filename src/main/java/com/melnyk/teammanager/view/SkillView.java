@@ -26,16 +26,11 @@ public class SkillView {
             System.out.println(skill);
     }
 
-    public void show(Integer id) {
-
-        Skill skill = skillService.get(id);
-
-        if (skill != null) {
-            System.out.println("Навык с идентификатором " + id);
+    public void show(Skill skill) {
+        if (skill != null)
             System.out.println(skill);
-        } else {
-            System.out.println("Навыка с таким id не существует");
-        }
+        else
+            System.out.println("Такого навыка не существует");
 
     }
 

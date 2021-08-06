@@ -78,7 +78,7 @@ public class SkillController {
         id = scan.nextInt();
         skill = skillService.get(id);
 
-        skillView.show(id);
+        skillView.show(skill);
 
         if (skill == null) return;
 

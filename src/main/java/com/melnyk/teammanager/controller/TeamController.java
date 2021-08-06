@@ -119,7 +119,7 @@ public class TeamController {
         id = scan.nextInt();
         team = teamService.get(id);
 
-        teamView.show(id);
+        teamView.show(team);
 
         if (team == null) return;
 

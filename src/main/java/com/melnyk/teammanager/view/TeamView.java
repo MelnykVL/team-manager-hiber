@@ -22,17 +22,11 @@ public class TeamView {
         System.out.println(teamService.getAll());
     }
 
-    public void show(Integer id) {
-
-        Team team = teamService.get(id);
-
-        if (team != null) {
-            System.out.println("Команда с идентификатором " + id);
+    public void show(Team team) {
+        if (team != null)
             System.out.println(team);
-        } else {
-            System.out.println("Команды с таким id не существует");
-        }
-
+        else
+            System.out.println("Команды не существует");
     }
 
     public void showObjectActions() {

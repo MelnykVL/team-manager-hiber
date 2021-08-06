@@ -26,17 +26,12 @@ public class DeveloperView {
             System.out.println(dev);
     }
 
-    public void show(Integer id) {
-
-        Developer dev = developerService.get(id);
-
+    public void show(Developer dev) {
         if (dev != null) {
-            System.out.println("Разработчик с идентификатором " + id);
             System.out.println(dev);
         } else {
-            System.out.println("Разработчика с таким id не существует");
+            System.out.println("Разработчика не существует");
         }
-
     }
 
     public void showObjectActions() {

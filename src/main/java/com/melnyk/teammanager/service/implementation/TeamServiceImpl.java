@@ -7,7 +7,7 @@ import com.melnyk.teammanager.service.TeamService;
 import java.util.Set;
 
 public class TeamServiceImpl implements TeamService {
-    private TeamRepository repo;
+    private final TeamRepository repo;
 
     public TeamServiceImpl(TeamRepository repo) {
         this.repo = repo;

@@ -7,7 +7,7 @@ import com.melnyk.teammanager.service.DeveloperService;
 import java.util.Set;
 
 public class DeveloperServiceImpl implements DeveloperService {
-    private DeveloperRepository repo;
+    private final DeveloperRepository repo;
 
     public DeveloperServiceImpl(DeveloperRepository repo) {
         this.repo = repo;

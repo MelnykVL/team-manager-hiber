@@ -95,7 +95,7 @@ public class DeveloperController {
         id = scan.nextInt();
         dev = developerService.get(id);
 
-        developerView.show(id);
+        developerView.show(dev);
 
         if (dev == null) return;
 

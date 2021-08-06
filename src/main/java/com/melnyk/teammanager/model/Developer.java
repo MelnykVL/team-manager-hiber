@@ -22,7 +22,7 @@ public class Developer {
     @Column(name = "last_name", nullable = false)
     private String lastName;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "team_id")
     private Team team;
 

@@ -7,7 +7,7 @@ import com.melnyk.teammanager.service.SkillService;
 import java.util.Set;
 
 public class SkillServiceImpl implements SkillService{
-    private SkillRepository repo;
+    private final SkillRepository repo;
 
     public SkillServiceImpl(SkillRepository repo) {
         this.repo = repo;
