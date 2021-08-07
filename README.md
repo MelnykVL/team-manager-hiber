@@ -35,7 +35,8 @@ The small console application for managing teams, developers, and their skills u
     `git clone https://github.com/MelnykVL/team-manager-hiber.git`
 
 2. Open the project with the Intellij IDEA.
-3. Set your settings in **flyway.poperties** and **hibernate.cfg.xml** files.
-4. Create the database called ***team_manager***.
-5. Using Maven in Intellij IDEA, run `flyway:migrate` to create tables in the database.
-6. Run the project.
+3. Load Maven changes.
+4. Set your settings in **flyway.poperties** and **hibernate.cfg.xml** files.
+5. Create the database called ***team_manager***.
+6. Using Maven in Intellij IDEA, run `flyway:migrate` to create tables in the database.
+7. Run the project.
