@@ -10,7 +10,7 @@ The small console application for managing teams, developers, and their skills u
 
 - Install the latest version of Java and set up environment variables *(if necessary)*.
 
-  > [JDK](https://www.oracle.com/java/technologies/javase-downloads.html)<br>
+  > [JDK](https://www.oracle.com/java/technologies/javase-downloads.html) <br>
   > **or**<br>
   > [OpenJDK](https://openjdk.java.net/install/)
 
@@ -24,8 +24,8 @@ The small console application for managing teams, developers, and their skills u
 
 - Install a Java IDE (for example: Intellij IDEA, Eclipse, NetBeans).
 
-  > [Intellij IDEA](https://www.jetbrains.com/idea/download/#section=windows) (recommended)<br>
-  > [Eclipse](https://www.eclipse.org/downloads/)<br>
+  > [Intellij IDEA](https://www.jetbrains.com/idea/download/#section=windows) (recommended) <br>
+  > [Eclipse](https://www.eclipse.org/downloads/) <br>
   > [NetBeans](https://netbeans.apache.org/download/)
 
 ## Run the example
