@@ -22,7 +22,7 @@ public class Developer {
     @Column(name = "last_name", nullable = false)
     private String lastName;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "team_id")
     private Team team;
 
@@ -61,7 +61,8 @@ public class Developer {
 
     public void setId(Integer id) {
         this.id = id;
-    }
+    }    @Fetch(value = FetchMode.SELECT)
+
 
     public String getFirstName() {
         return firstName;

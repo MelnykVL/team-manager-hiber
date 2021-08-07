@@ -54,7 +54,7 @@ public class TeamRepositoryImpl implements TeamRepository {
     public Set<Team> getAll() {
         Session session = HibernateUtil.getSession();
         Transaction tx = session.beginTransaction();
-        Set<Team> teams = new HashSet<>(session.createQuery("FROM Team t").getResultList());
+        Set<Team> teams = new HashSet<>(session.createQuery("FROM Team t LEFT JOIN FETCH t.developers d").getResultList());
         tx.commit();
         session.close();
         return teams;

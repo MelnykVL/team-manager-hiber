@@ -22,8 +22,7 @@ public class Team {
     @Column(name = "team_status", nullable = false)
     private TeamStatus teamStatus = TeamStatus.ACTIVE;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "team")
-    @Fetch(value = FetchMode.SUBSELECT)
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "team")
     private Set<Developer> developers = new HashSet<>();
 
     public Team() {}

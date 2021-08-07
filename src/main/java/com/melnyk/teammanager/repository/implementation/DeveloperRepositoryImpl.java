@@ -54,7 +54,7 @@ public class DeveloperRepositoryImpl implements DeveloperRepository {
     public Set<Developer> getAll() {
         Session session = HibernateUtil.getSession();
         Transaction tx = session.beginTransaction();
-        Set<Developer> developers = new HashSet<>(session.createQuery("FROM Developer d").getResultList());
+        Set<Developer> developers = new HashSet<>(session.createQuery("FROM Developer d LEFT JOIN FETCH d.team t").getResultList());
         tx.commit();
         session.close();
         return developers;
