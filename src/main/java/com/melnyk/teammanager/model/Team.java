@@ -1,5 +1,6 @@
 package com.melnyk.teammanager.model;
 
+import org.hibernate.annotations.BatchSize;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
@@ -23,6 +24,8 @@ public class Team {
     private TeamStatus teamStatus = TeamStatus.ACTIVE;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "team")
+//    @Fetch(value = FetchMode.SUBSELECT)
+    @BatchSize(size = 5)
     private Set<Developer> developers = new HashSet<>();
 
     public Team() {}
