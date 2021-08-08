@@ -13,7 +13,9 @@ public class TeamRepositoryImpl implements TeamRepository {
     public Team getById(Integer integer) {
         Session session = HibernateUtil.getSession();
         Transaction tx = session.beginTransaction();
-        Team team = session.get(Team.class, integer);
+        Team team = (Team) session.createQuery("FROM Team t LEFT JOIN FETCH t.developers d WHERE t.id IN :i")
+                .setParameter("i", integer)
+                .uniqueResult();
         tx.commit();
         session.close();
         return team;

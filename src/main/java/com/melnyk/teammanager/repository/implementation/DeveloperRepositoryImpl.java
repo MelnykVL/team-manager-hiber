@@ -13,7 +13,9 @@ public class DeveloperRepositoryImpl implements DeveloperRepository {
     public Developer getById(Integer integer) {
         Session session = HibernateUtil.getSession();
         Transaction tx = session.beginTransaction();
-        Developer dev = session.get(Developer.class, integer);
+        Developer dev = (Developer) session.createQuery("FROM Developer d LEFT JOIN FETCH d.team t WHERE d.id IN :i")
+                .setParameter("i", integer)
+                .uniqueResult();
         tx.commit();
         session.close();
         return dev;

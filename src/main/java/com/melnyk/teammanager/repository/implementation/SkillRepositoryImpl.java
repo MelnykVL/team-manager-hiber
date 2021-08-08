@@ -47,7 +47,6 @@ public class SkillRepositoryImpl implements SkillRepository {
         session.delete(skill);
         tx.commit();
         session.close();
-        System.out.println(skill);
         return skill;
     }
 
