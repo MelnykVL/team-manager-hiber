@@ -70,7 +70,7 @@ public class SkillServiceImplTest {
 
     @Test
     public void remove() {
-        Skill skill = new Skill(1, "Name");
+        Skill skill = new Skill("Name");
 
         given(skillSer.remove(1)).willReturn(skill);
 
@@ -80,8 +80,8 @@ public class SkillServiceImplTest {
     @Test
     public void shouldReturnFulledSet() {
         Set<Skill> skills = new HashSet<>(Arrays.asList(
-                new Skill(1,"Java"),
-                new Skill(2,"Hiber")
+                new Skill("Java"),
+                new Skill("Hiber")
         ));
 
         given(skillSer.getAll()).willReturn(skills);

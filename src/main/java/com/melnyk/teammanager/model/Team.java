@@ -45,13 +45,6 @@ public class Team {
         this.developers = developers;
     }
 
-    public Team(Integer id, String name, TeamStatus teamStatus, Set<Developer> developers) {
-        this.id = id;
-        this.name = name;
-        this.teamStatus = teamStatus;
-        this.developers = developers;
-    }
-
     public Integer getId() {
         return id;
     }

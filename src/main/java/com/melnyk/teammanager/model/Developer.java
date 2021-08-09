@@ -50,13 +50,6 @@ public class Developer {
         this.team = team;
     }
 
-    public Developer(Integer id, String firstName, String lastName, Team team) {
-        this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.team = team;
-    }
-
     public Integer getId() {
         return id;
     }

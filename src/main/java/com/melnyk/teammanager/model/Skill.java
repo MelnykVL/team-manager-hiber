@@ -20,11 +20,6 @@ public class Skill {
         this.name = name;
     }
 
-    public Skill(Integer id, String name) {
-        this.id = id;
-        this.name = name;
-    }
-
     public Integer getId() {
         return id;
     }
