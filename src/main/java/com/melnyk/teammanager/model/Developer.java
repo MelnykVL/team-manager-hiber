@@ -1,8 +1,6 @@
 package com.melnyk.teammanager.model;
 
 import org.hibernate.annotations.BatchSize;
-import org.hibernate.annotations.Fetch;
-import org.hibernate.annotations.FetchMode;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -33,7 +31,6 @@ public class Developer {
             joinColumns = @JoinColumn(name = "developer_id"),
             inverseJoinColumns = @JoinColumn(name = "skill_id")
     )
-//    @Fetch(value = FetchMode.SUBSELECT)
     @BatchSize(size = 5)
     private Set<Skill> skills = new HashSet<>();
 

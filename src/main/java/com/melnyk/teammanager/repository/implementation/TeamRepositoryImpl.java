@@ -12,11 +12,9 @@ public class TeamRepositoryImpl implements TeamRepository {
     @Override
     public Team getById(Integer integer) {
         Session session = HibernateUtil.getSession();
-        Transaction tx = session.beginTransaction();
         Team team = (Team) session.createQuery("FROM Team t LEFT JOIN FETCH t.developers d WHERE t.id IN :i")
                 .setParameter("i", integer)
                 .uniqueResult();
-        tx.commit();
         session.close();
         return team;
     }
@@ -55,9 +53,7 @@ public class TeamRepositoryImpl implements TeamRepository {
     @Override
     public Set<Team> getAll() {
         Session session = HibernateUtil.getSession();
-        Transaction tx = session.beginTransaction();
         Set<Team> teams = new HashSet<>(session.createQuery("FROM Team t LEFT JOIN FETCH t.developers d").getResultList());
-        tx.commit();
         session.close();
         return teams;
     }

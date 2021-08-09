@@ -12,11 +12,9 @@ public class DeveloperRepositoryImpl implements DeveloperRepository {
     @Override
     public Developer getById(Integer integer) {
         Session session = HibernateUtil.getSession();
-        Transaction tx = session.beginTransaction();
         Developer dev = (Developer) session.createQuery("FROM Developer d LEFT JOIN FETCH d.team t WHERE d.id IN :i")
                 .setParameter("i", integer)
                 .uniqueResult();
-        tx.commit();
         session.close();
         return dev;
     }
@@ -55,9 +53,7 @@ public class DeveloperRepositoryImpl implements DeveloperRepository {
     @Override
     public Set<Developer> getAll() {
         Session session = HibernateUtil.getSession();
-        Transaction tx = session.beginTransaction();
         Set<Developer> developers = new HashSet<>(session.createQuery("FROM Developer d LEFT JOIN FETCH d.team t").getResultList());
-        tx.commit();
         session.close();
         return developers;
     }

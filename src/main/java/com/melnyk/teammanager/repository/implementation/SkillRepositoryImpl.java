@@ -12,9 +12,7 @@ public class SkillRepositoryImpl implements SkillRepository {
     @Override
     public Skill getById(Integer integer) {
         Session session = HibernateUtil.getSession();
-        Transaction tx = session.beginTransaction();
         Skill skill = session.get(Skill.class, integer);
-        tx.commit();
         session.close();
         return skill;
     }
@@ -53,9 +51,7 @@ public class SkillRepositoryImpl implements SkillRepository {
     @Override
     public Set<Skill> getAll() {
         Session session = HibernateUtil.getSession();
-        Transaction tx = session.beginTransaction();
         Set<Skill> skills = new HashSet<>(session.createQuery("FROM Skill").getResultList());
-        tx.commit();
         session.close();
         return skills;
     }
