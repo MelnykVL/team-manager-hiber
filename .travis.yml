@@ -1,5 +1,12 @@
 language: java
+
+services:
+  - postgresql
+
 sudo: false
+
+before_script:
+  - psql -c 'create database team_manager_test;' -U postgres
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
