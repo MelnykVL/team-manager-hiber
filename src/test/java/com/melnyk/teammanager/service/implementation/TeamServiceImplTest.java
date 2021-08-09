@@ -26,7 +26,6 @@ public class TeamServiceImplTest {
     @Test
     public void shouldReturnNotNull() {
         Team team = new Team();
-        team.setId(1);
 
         given(teamSer.get(1)).willReturn(team);
 
@@ -38,7 +37,6 @@ public class TeamServiceImplTest {
     @Test
     public void shouldReturnNull() {
         Team team = new Team();
-        team.setId(1);
 
         given(teamSer.get(1)).willReturn(null);
 

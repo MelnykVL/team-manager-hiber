@@ -25,7 +25,6 @@ public class DeveloperServiceImplTest {
     @Test
     public void shouldReturnNotNull() {
         Developer dev = new Developer();
-        dev.setId(1);
 
         given(devSer.get(1)).willReturn(dev);
 
@@ -37,7 +36,6 @@ public class DeveloperServiceImplTest {
     @Test
     public void shouldReturnNull() {
         Developer dev = new Developer();
-        dev.setId(1);
 
         given(devSer.get(1)).willReturn(null);
 

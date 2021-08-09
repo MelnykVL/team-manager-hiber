@@ -61,11 +61,6 @@ public class Developer {
         return id;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }    @Fetch(value = FetchMode.SELECT)
-
-
     public String getFirstName() {
         return firstName;
     }
